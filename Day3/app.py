@@ -18,20 +18,9 @@ def generate_path(command_list):
     return path
 
 
-def part1():
-    with open('full_input.txt', 'r') as in_dat:
-        path1 = set(generate_path(convert_to_tuple_list(in_dat.readline().strip().split(','))))
-        path2 = set(generate_path(convert_to_tuple_list(in_dat.readline().split(','))))
-        print(min([abs(p[0]) + abs(p[1]) for p in path1.intersection(path2)]))
-
-
-def part2():
-    with open('full_input.txt', 'r') as in_dat:
-        path1 = generate_path(convert_to_tuple_list(in_dat.readline().strip().split(',')))
-        path2 = generate_path(convert_to_tuple_list(in_dat.readline().split(',')))
-        print(min([path1.index(p) + path2.index(p) for p in
-                   set(path1).intersection(set(path2))]) + 2)  # +2 because, we dont have (0,0) in our lists
-
-
-part1()
-part2()
+with open('full_input.txt', 'r') as in_dat:
+    path1 = generate_path(convert_to_tuple_list(in_dat.readline().strip().split(',')))
+    path2 = generate_path(convert_to_tuple_list(in_dat.readline().split(',')))
+    print(min([abs(p[0]) + abs(p[1]) for p in set(path1).intersection(set(path2))]))
+    print(min([path1.index(p) + path2.index(p) for p in
+               set(path1).intersection(set(path2))]) + 2)  # +2 because, we dont have (0,0) in our lists
