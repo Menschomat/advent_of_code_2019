@@ -5,12 +5,12 @@ def rule_check(int_val):
     digits = [int(x) for x in str(int_val)]
     adjacent_same = {}
     for idx, val in enumerate(digits):
+        if idx + 1 < len(digits) and val > digits[idx + 1]:
+            return False
         if idx + 1 < len(digits) and val == digits[idx + 1]:
             if val not in adjacent_same.keys():
                 adjacent_same[val] = 0
             adjacent_same[val] += 1
-        if idx + 1 < len(digits) and val > digits[idx + 1]:
-            return False
     return list(adjacent_same.values()) or False
 
 
