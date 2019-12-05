@@ -18,7 +18,7 @@ def generate_path(command_list):
     return path
 
 
-with open('full_input.txt', 'r') as in_dat:
+with open('input.txt', 'r') as in_dat:
     path1 = generate_path(convert_to_tuple_list(in_dat.readline().strip().split(',')))
     path2 = generate_path(convert_to_tuple_list(in_dat.readline().split(',')))
     print(min([abs(p[0]) + abs(p[1]) for p in set(path1).intersection(set(path2))]))
