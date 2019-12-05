@@ -1,5 +1,5 @@
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
-
+git-rewrite.bat
 *.iml
 venv/
 .vscode/
