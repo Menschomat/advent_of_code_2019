@@ -1,6 +1,3 @@
-from math import floor
-
-
 def hacky_solution(in_dat):
     int_list = [int(val) for val in in_dat.read().split('\n')]
     print(sum([int_list.append(x // 3 - 2) or x // 3 - 2 for x in int_list if (x // 3 - 2) > 0]))
@@ -14,6 +11,9 @@ def more_convenient_solution(in_dat):
     print(sum([append_with_return(x // 3 - 2, int_list) for x in int_list]))
 
 
-with open('input.txt', 'r') as file:
+with open('input.txt', 'r') as file:  # Part 1
+    print(sum([(int(x) // 3) - 2 for x in file.read().split('\n')]))
+
+with open('input.txt', 'r') as file:  # Part 2
     hacky_solution(file)
     # more_convenient_solution(file)
